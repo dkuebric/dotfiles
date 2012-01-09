@@ -1,0 +1,52 @@
+:syntax on
+:set ruler
+:set sm
+:set expandtab
+:set tabstop=4
+:set shiftwidth=4
+:set ignorecase
+:set background=dark
+:set pastetoggle=<F12>
+:set mouse=a
+:set hlsearch
+nmap <F11> gqap>
+
+:map <F2> :bNext
+:map mm ddko<esc>
+:imap jj <esc>
+:imap kk <esc>:w<CR>i
+:imap jk <esc>:wq<CR>
+
+:set viminfo='10,\"100,:20,%,n~/.viminfo
+    au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+nmap <silent> <leader>s :set nolist!<CR>
+
+func GitGrep(...)
+  let save = &grepprg
+  set grepprg=git\ grep\ -n\ $*
+  let s = 'grep'
+  for i in a:000
+    let s = s . ' ' . i
+  endfor
+  exe s
+  let &grepprg = save
+endfun
+command -nargs=? G call GitGrep(<f-args>)
+
+func GitGrepWord()
+  normal! "zyiw
+  call GitGrep('-w -e ', getreg('z'))
+endf
+nmap <C-x>G :call GitGrepWord()<CR>
+
+" whitepsace nazi
+match Todo /\s\+$/
+autocmd BufWritePre *.py :%s/\s\+$//e
+
+" syntax plugins
+au BufRead,BufNewFile *.thrift set filetype=thrift
+au! Syntax thrift source ~/.vim/thrift.vim
+
+au BufNewFile,BufRead *.html set filetype=htmljinja
+
