@@ -3,6 +3,17 @@
 alias gdi='git diff --color'
 alias gitall='for b in master prod rc; do git checkout $b; git pull; done'
 
+gr() {
+    RESULT=`git diff`
+    if [ -z "$RESULT" ]; then
+        git pull
+    else
+        git stash
+        git pull
+        git stash pop
+    fi
+}
+
 
 ###################
 # FS navigation
