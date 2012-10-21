@@ -18,7 +18,9 @@ nmap <F11> gqap>
 :imap jk <esc>:wq<CR>
 
 :set viminfo='10,\"100,:20,%,n~/.viminfo
-    au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+" restore cursor position
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 nmap <silent> <leader>s :set nolist!<CR>
 
@@ -43,6 +45,9 @@ nmap <C-x>G :call GitGrepWord()<CR>
 " whitepsace nazi
 match Todo /\s\+$/
 autocmd BufWritePre *.py :%s/\s\+$//e
+
+" line-length nazi
+:set colorcolumn=100
 
 " syntax plugins
 au BufRead,BufNewFile *.thrift set filetype=thrift
