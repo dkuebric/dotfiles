@@ -55,3 +55,4 @@ au! Syntax thrift source ~/.vim/thrift.vim
 
 au BufNewFile,BufRead *.html set filetype=htmljinja
 
+au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
