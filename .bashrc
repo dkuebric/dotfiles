@@ -72,11 +72,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias ls='ls -la --color'
+OS=`uname`
+if [ "$OS" == "Darwin" ]; then
+    alias ls='ls -laG'
+else
+    alias ls='ls -la --color'
+fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
