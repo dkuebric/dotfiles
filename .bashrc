@@ -99,7 +99,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-. /etc/bash_completion.d/git
+if [ -x /etc/bash_completion.d/git ]; then
+    . /etc/bash_completion.d/git
+fi
 
 export EDITOR=vim
 
