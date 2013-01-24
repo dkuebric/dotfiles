@@ -12,3 +12,6 @@ touch ~/.bash_aliases_local
 # vim
 ln -s $CWD/.vimrc ~/.vimrc
 ln -s $CWD/.vim ~/.vim
+
+# osx
+ln -s $CWD/.profile ~/.profile
