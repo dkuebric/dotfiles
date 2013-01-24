@@ -6,6 +6,7 @@ CWD=`pwd`
 ln -s $CWD/.bashrc ~/.bashrc
 ln -s $CWD/.bash_aliases ~/.bash_aliases
 ln -s $CWD/.bash_logout ~/.bash_logout
+ln -s $CWD/.inputrc ~/.inputrc
 touch ~/.bash_aliases_local
 
 # vim
