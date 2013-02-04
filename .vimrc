@@ -54,5 +54,6 @@ au BufRead,BufNewFile *.thrift set filetype=thrift
 au! Syntax thrift source ~/.vim/thrift.vim
 
 au BufNewFile,BufRead *.html set filetype=htmljinja
+au BufNewFile,BufRead *.less set filetype=less
 
 au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
