@@ -44,7 +44,7 @@ nmap <C-x>G :call GitGrepWord()<CR>
 
 " whitepsace nazi
 match Todo /\s\+$/
-autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre *.py,*.js,*.r :%s/\s\+$//e
 
 " line-length nazi
 :set colorcolumn=100
