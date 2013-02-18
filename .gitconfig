@@ -1,0 +1,9 @@
+[user]
+	name = Dan Kuebrich
+	email = dan.kuebrich@gmail.com
+[color]
+    ui = auto
+[branch]
+    autosetuprebase = always
+[push]
+    default = tracking

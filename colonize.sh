@@ -13,5 +13,8 @@ touch ~/.bash_aliases_local
 ln -s $CWD/.vimrc ~/.vimrc
 ln -s $CWD/.vim ~/.vim
 
+# git
+ln -s $CWD/.gitconfig ~/.gitconfig
+
 # osx
 ln -s $CWD/.profile ~/.profile
