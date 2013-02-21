@@ -10,7 +10,7 @@ rm ~/.inputrc
 
 # vim
 rm ~/.vimrc
-rm ~/.vim
+rm -rf ~/.vim
 
 # git
 rm ~/.gitconfig
