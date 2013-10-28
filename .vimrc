@@ -19,7 +19,7 @@ nmap <F11> gqap>
 
 :set viminfo='10,\"100,:20,%,n~/.viminfo
 
-" restore cursor position
+""" restore cursor position
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 nmap <silent> <leader>s :set nolist!<CR>
@@ -42,14 +42,14 @@ func GitGrepWord()
 endf
 nmap <C-x>G :call GitGrepWord()<CR>
 
-" whitepsace nazi
+""" whitepsace nazi
 match Todo /\s\+$/
 autocmd BufWritePre *.py,*.js,*.r,*.sh :%s/\s\+$//e
 
-" line-length nazi
+""" line-length nazi
 :set colorcolumn=100
 
-" syntax plugins
+""" syntax plugins
 au BufRead,BufNewFile *.thrift set filetype=thrift
 au! Syntax thrift source ~/.vim/thrift.vim
 
@@ -57,3 +57,17 @@ au BufNewFile,BufRead *.html set filetype=htmljinja
 au BufNewFile,BufRead *.less set filetype=less
 
 au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+
+""" cscope
+source ~/.vim/cscope_macros.vim
+" http://vim.wikia.com/wiki/Autoloading_Cscope_Database
+function! LoadCscope()
+  let db = findfile("cscope.out", ".;")
+  if (!empty(db))
+    let path = strpart(db, 0, match(db, "/cscope.out$"))
+    set nocscopeverbose " suppress 'duplicate connection' error
+    exe "cs add " . db . " " . path
+    set cscopeverbose
+  endif
+endfunction
+au BufEnter /* call LoadCscope()
