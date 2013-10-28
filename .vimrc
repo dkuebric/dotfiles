@@ -5,6 +5,7 @@
 :set tabstop=4
 :set shiftwidth=4
 :set ignorecase
+:set smartcase
 :set background=dark
 :set pastetoggle=<F12>
 :set mouse=a
