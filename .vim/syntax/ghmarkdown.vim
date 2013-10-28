@@ -2,7 +2,7 @@
 " Based on syntax file written by Tim Pope in markdown.vim
 " Language:     Github Flavored Markdown
 " Filenames:    *.ghmarkdown
-" Last Change:	2012 September 22
+" Last Change:	2013 April 7
 " Special extension for GithubFlavored Markdown
 
 if exists("b:current_syntax")
@@ -43,8 +43,8 @@ syn match markdownBlockquote ">\s" contained nextgroup=@markdownBlock
 syn region markdownCodeBlock start="    \|\t" end="$" contained
 
 " TODO: real nesting
-syn match markdownListMarker " \{0,4\}[-*+]\%(\s\+\S\)\@=" contained
-syn match markdownOrderedListMarker " \{0,4}\<\d\+\.\%(\s*\S\)\@=" contained
+syn match markdownListMarker " \{0,8\}[-*+]\%(\s\+\S\)\@=" contained
+syn match markdownOrderedListMarker " \{0,8}\<\d\+\.\%(\s*\S\)\@=" contained
 
 syn match markdownRule "\* *\* *\*[ *]*$" contained
 syn match markdownRule "- *- *-[ -]*$" contained
@@ -75,7 +75,7 @@ syn region markdownCode matchgroup=markdownCodeDelimiter start="`` \=" end=" \=`
 syn match markdownEscape "\\[][\\`*_{}()#+.!-]"
 
 syn cluster markdownBlock contains=markdownH1,markdownH2,markdownH3,markdownH4,markdownH5,markdownH6,markdownBlockquote,markdownListMarker,markdownOrderedListMarker,markdownCodeBlock,markdownRule, markdownGHCodeBlock
-syn region markdownGHCodeBlock matchgroup=markdownCodeDelimiter start="^\s*$\n```\w*\s*$" end="```$\n\s*\n" contained  keepend
+syn region markdownGHCodeBlock matchgroup=markdownCodeDelimiter start="^\s*$\n```\s\?\S*\s*$" end="```$\n\s*\n" contained  keepend
 " Copying rst's method of using literal strings
 hi def link markdownGHCodeBlock           String
 hi def link markdownCodeBlock             String
