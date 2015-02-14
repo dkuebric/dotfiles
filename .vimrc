@@ -4,16 +4,16 @@
 :set expandtab
 :set tabstop=4
 :set shiftwidth=4
+:set mouse=a
+
+""" search
+:set hlsearch
 :set ignorecase
 :set smartcase
-:set background=dark
-:set pastetoggle=<F12>
-:set mouse=a
-:set hlsearch
-nmap <F11> gqap>
 
-:map <F2> :bNext
-:map mm ddko<esc>
+:set background=dark
+
+""" avoid using your pinky too much
 :imap jj <esc>
 :imap kk <esc>:w<CR>i
 :imap jk <esc>:wq<CR>
@@ -72,3 +72,17 @@ function! LoadCscope()
   endif
 endfunction
 au BufEnter /* call LoadCscope()
+
+""" pathogen
+execute pathogen#infect()
+
+""" syntastic config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 0
+let g:syntastic_enable_highlighting = 1
