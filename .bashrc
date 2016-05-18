@@ -110,3 +110,11 @@ export EDITOR=vim
 chmod 777 `tty`
 
 umask 0002
+
+# node
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# go
+export GOPATH="$HOME/gopath"
+export PATH="$GOPATH/bin:$PATH"
