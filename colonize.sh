@@ -18,3 +18,8 @@ ln -s $CWD/.gitconfig ~/.gitconfig
 
 # osx
 ln -s $CWD/.profile ~/.profile
+
+# osx terminal
+cp ~/Library/Preferences/com.apple.Terminal.plist ~/Library/Preferences/com.apple.Terminal.plist.bak
+cp ./osx/com.apple.Terminal.plist ~/Library/Preferences/com.apple.Terminal.plist
+defaults read com.apple.Terminal
