@@ -17,6 +17,14 @@
 :imap kk <esc>:w<CR>i
 :imap jk <esc>:wq<CR>
 
+"""  osx terminal stuff
+map  <C-A> <Home>
+imap <C-A> <Home>
+vmap <C-A> <Home>
+map  <C-E> <End>
+imap <C-E> <End>
+vmap <C-E> <End>
+
 :set viminfo='10,\"100,:20,%,n~/.viminfo
 
 """ restore cursor position
@@ -74,14 +82,3 @@ au BufEnter /* call LoadCscope()
 
 """ pathogen
 execute pathogen#infect()
-
-""" syntastic config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 0
-let g:syntastic_enable_highlighting = 1
