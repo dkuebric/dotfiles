@@ -70,10 +70,10 @@ function! LoadCscope()
     set cscopeverbose
   endif
 endfunction
-au BufEnter /* call LoadCscope()
+"""au BufEnter /* call LoadCscope()
 
 """ pathogen
-execute pathogen#infect()
+"""execute pathogen#infect()
 
 """ syntastic config
 set statusline+=%#warningmsg#
