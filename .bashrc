@@ -118,3 +118,15 @@ export NVM_DIR="$HOME/.nvm"
 # go
 export GOPATH="$HOME/gopath"
 export PATH="$GOPATH/bin:$PATH"
+
+# awsam
+if [ -s $HOME/.awsam/bash.rc ]; then
+    . $HOME/.awsam/bash.rc
+fi
+
+
+
+# Other local settings
+if [ -f ~/.bashrc_local ]; then
+    . ~/.bashrc_local
+fi

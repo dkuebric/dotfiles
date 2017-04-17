@@ -1,5 +1,5 @@
 ## dan kuebrich's dotfiles
 
 ### usage
-ravage.sh - remove existing dotfiles
+teardown.sh - remove existing dotfiles
 colonize.sh - symlink repo's dotfiles
