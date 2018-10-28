@@ -80,7 +80,4 @@ function! LoadCscope()
     set cscopeverbose
   endif
 endfunction
-au BufEnter /* call LoadCscope()
-
-""" pathogen
-execute pathogen#infect()
+"""au BufEnter /* call LoadCscope()
