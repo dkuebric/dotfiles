@@ -2,8 +2,9 @@
 :set ruler
 :set sm
 :set expandtab
-:set tabstop=4
-:set shiftwidth=4
+:set tabstop=2
+:set softtabstop=2
+:set shiftwidth=2
 
 """ search
 :set hlsearch
@@ -15,6 +16,7 @@
 """ avoid using your pinky too much
 :imap jj <esc>
 :imap kk <esc>:w<CR>i
+:imap kj <esc>:w<CR>
 :imap jk <esc>:wq<CR>
 
 """  osx terminal stuff
