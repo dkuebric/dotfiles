@@ -14,6 +14,9 @@ gr() {
     fi
 }
 
+###################
+# Docker
+alias dc='docker-compose'
 
 ###################
 # FS navigation

@@ -7,3 +7,7 @@
     autosetuprebase = always
 [push]
     default = tracking
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[credential]
+	helper = osxkeychain
