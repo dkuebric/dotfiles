@@ -81,3 +81,5 @@ function! LoadCscope()
   endif
 endfunction
 """au BufEnter /* call LoadCscope()
+
+filetype plugin indent on " https://github.com/fatih/vim-go/blob/master/doc/vim-go.txt#L2142
