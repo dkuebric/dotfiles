@@ -118,8 +118,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # go
-export GOPATH="$HOME/gopath"
+export GOPATH="$HOME/code/gopath"
 export PATH="$GOPATH/bin:$PATH"
+alias gp="cd $GOPATH/src/github.com/dkuebric"
 
 # awsam
 if [ -s $HOME/.awsam/bash.rc ]; then
