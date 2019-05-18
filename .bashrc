@@ -89,7 +89,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # local (non-portable) bash aliases
-if [ -f ~/.bash_aliases ]; then
+if [ -f ~/.bash_aliases_local ]; then
     . ~/.bash_aliases_local
 fi
 
@@ -102,7 +102,8 @@ fi
 if [ -x /etc/bash_completion.d/git ]; then
     . /etc/bash_completion.d/git
 fi
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
+which brew 2>&1 >/dev/null
+if [[ $? == 0 ]] && [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
